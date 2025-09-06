@@ -9,16 +9,19 @@ export default function Projects() {
       title: "Portfolio Website",
       desc: "A modern responsive portfolio using HTML & CSS & JS",
       img: pic1,
+      url: "https://personal-portfolio-addcc4.netlify.app/",
     },
     {
       title: "Coffee Shop",
       desc: "A welcoming homepage for a modern coffee shop showcasing its menu and offerings.",
       img: pic2,
+      url: "https://coffee-shop-797725.netlify.app/",
     },
     {
       title: "Movie Search App",
       desc: "A clean and functional movie search interface displaying filtered results for a user's query.",
       img: pic3,
+      url: "https://movie-search-app20.netlify.app/",
     },
   ];
 
@@ -57,8 +60,11 @@ export default function Projects() {
         {/* كروت المشاريع */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((p, i) => (
-            <motion.div
+            <motion.a
               key={p.title}
+              href={p.url}
+              target="_blank" // يفتح الرابط في تاب جديد
+              rel="noopener noreferrer"
               className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-200 
               dark:bg-gray-800/40 dark:border-gray-700/40 transition-all flex flex-col"
               variants={cardVariants}
@@ -91,7 +97,7 @@ export default function Projects() {
                   {p.desc}
                 </p>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
